@@ -9,6 +9,10 @@ import Lab03 from "./screen/lab03/Lab03";
 import Lab03_1 from "./screen/lab03/lab031/Lab031";
 import Lab03_2 from "./screen/lab03/lab032/Lab032";
 import Lab03_1_Result from "./screen/lab03/lab031/Lab031Result";
+import { RootStackParamList } from "./types/route";
+import Lab042 from "./screen/lab04/lab042/Lab042";
+import Lab042_1_Result from "./screen/lab04/lab042/Lab0421Result";
+import Lab04 from "./screen/lab04/Lab04";
 
 export default function App() {
   const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -36,6 +40,21 @@ export default function App() {
           name="Lab031Result"
           component={Lab03_1_Result}
           options={{ title: "Lab 03.2 Result" }}
+        />
+        <Stack.Screen
+          name="Lab042"
+          component={Lab042}
+          options={{ title: "Lab 042" }}
+        />
+        <Stack.Screen
+          name="Lab04"
+          component={Lab04}
+          options={{ title: "Lab 04" }}
+        />
+        <Stack.Screen
+          name="Lab0421Result"
+          component={Lab042_1_Result}
+          options={{ title: "Lab 0421 Result" }}
         />
       </Stack.Navigator>
     </NavigationContainer>

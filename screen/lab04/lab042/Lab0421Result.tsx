@@ -1,4 +1,9 @@
-import { useNavigation, useRoute,NavigationProp,RouteProp } from "@react-navigation/native";
+import {
+  useNavigation,
+  useRoute,
+  NavigationProp,
+  RouteProp,
+} from "@react-navigation/native";
 import React, { useState } from "react";
 import {
   FlatList,
@@ -7,32 +12,34 @@ import {
   StyleSheet,
   View,
   Pressable,
-  
 } from "react-native";
 import { RootStackParamList } from "../../../types/route";
 
-const Lab03_1_Result = () => {
-  // const route = useRoute();
-  // const navigation = useNavigation();
-
-  // const test = navigation.getParam("des");
-  // console.log("tt", test);
-
-  // const { result, des } = route.params;
-
-  // console.log("result", JSON.stringify(result));
+const Lab042_1_Result = () => {
   const navigation: NavigationProp<RootStackParamList> = useNavigation();
-  const route: RouteProp<RootStackParamList, 'Lab031Result'> = useRoute();
-  console.log("route",route)
+  const route: RouteProp<RootStackParamList, "Lab0421Result"> = useRoute();
+  console.log("route", route);
 
+  const formatNumber = (num: number | undefined): number => {
+    if (num === undefined) {
+      return 0;
+    }
+    return Math.round(num * 100) / 100;
+  };
 
   return (
-    <View >
+    <View>
       <Text style={styles.header}>Lab032</Text>
 
       <View style={styles.body}>
-      <Text>{route.params?.result}</Text>
-      <Text>{route.params?.des}</Text>
+        {route.params?.result.x1 && (
+          <Text>x1:{formatNumber(route.params?.result.x1)}</Text>
+        )}
+        {route.params?.result.x2 && (
+          <Text>x2:{formatNumber(route.params?.result.x2)}</Text>
+        )}
+        <Text>{route.params?.result.mes}</Text>
+        {/* <Text>{route.params?.des}</Text> */}
       </View>
     </View>
   );
@@ -80,7 +87,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     flexWrap: "wrap",
-    gap: 20,
+    gap: 50,
+    marginTop: 50,
   },
   // layout: {
   //   display: "flex",
@@ -89,4 +97,4 @@ const styles = StyleSheet.create({
   // },
 });
 
-export default Lab03_1_Result;
+export default Lab042_1_Result;

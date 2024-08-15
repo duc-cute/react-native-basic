@@ -8,6 +8,7 @@ import {
   View,
   Pressable,
 } from "react-native";
+import { RootStackParamList } from "../../../types/route";
 
 const array1 = [
   {
