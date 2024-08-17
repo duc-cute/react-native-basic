@@ -13,6 +13,7 @@ import {
   View,
   Pressable,
   ImageBackground,
+  Image,
 } from "react-native";
 import { RootStackParamList } from "../../../types/route";
 
@@ -20,26 +21,28 @@ const CourseDetail = () => {
   const navigation: NavigationProp<RootStackParamList> = useNavigation();
   const route: RouteProp<RootStackParamList, "CourseDetail"> = useRoute();
   console.log("route", route);
+  console.log("route.params.course.name", route?.params?.course.name);
+  
 
 
   return (
-    <View>
+    <View style={styles.body}>
       <Text style={styles.header}>Lab032</Text>
 
       <View style={styles.body}>
         {route.params?.course.image && (
           <View style={styles.container}>
-            <ImageBackground
-              source={{ uri: route.params.course.image }}
-              resizeMode="cover"
+            <Image
               style={styles.image}
-            >
-              <Text style={styles.text}>{route.params.course.name}</Text>
-              <Text>Price Course: {route.params.course.price}VND</Text>
-              <Text>Description Course: {route.params.course.desc}</Text>
-            </ImageBackground>
+              source={{uri:route?.params?.course.image}}
+            />
+              <View>
+                <Text style={styles.textItem}>Price Course: {route.params.course.price}VND</Text>
+                <Text style={styles.textItem}>Description Course: {route.params.course.desc}</Text>
+              </View> 
           </View>
         )}
+        {/* <Text style={styles.text}>{route?.params?.course.name}</Text> */}
       </View>
     </View>
   );
@@ -47,17 +50,17 @@ const CourseDetail = () => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 50,
-    flex: 1,
-    backgroundColor: "#fff",
+    display:"flex",
+    flexDirection: "row",
+    gap:20
     // alignItems: 'center',
     // justifyContent: 'center',
   },
   image: {
     flex: 1,
     justifyContent: "center",
-    width: 40,
-    height: 40,
+    width: 100,
+    height: 100,
   },
   text: {
     color: "white",
@@ -69,7 +72,6 @@ const styles = StyleSheet.create({
   },
   header: {
     backgroundColor: "orange",
-    paddingHorizontal: 20,
     fontSize: 20,
     textAlign: "center",
   },
@@ -80,28 +82,19 @@ const styles = StyleSheet.create({
     margin: 10,
   },
 
-  itemPress: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "25%",
-    // width: "50%",
-    backgroundColor: "#ccc",
-    padding: 8,
-    borderRadius: 8,
-  },
-
   body: {
-    paddingHorizontal: 10,
+    display:"flex",
+    paddingHorizontal:10,
+    flex:1,
+    height:100,
     marginBottom: 20,
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    flexWrap: "wrap",
     gap: 50,
-    marginTop: 50,
+    color:"#000",
+    backgroundColor:"#fff"
+  },
+  textItem :{
+    display:"flex"
+
   },
   // layout: {
   //   display: "flex",

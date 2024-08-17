@@ -11,6 +11,12 @@ const Lab05 = () => {
       <Text>Lab05</Text>
 
       <View style={styles.group}>
+      <TouchableOpacity
+          style={styles.labButton}
+          onPress={() => navigation.navigate("Course")}
+        >
+          <Text style={styles.labText}>Đi tới Course</Text>
+        </TouchableOpacity>
         <TouchableOpacity
           style={styles.labButton}
           onPress={() => navigation.navigate("Product")}

@@ -8,6 +8,7 @@ export type RootStackParamList = {
   Lab042: { id: number; title: string } | undefined;
   Course: { id: number; title: string } | undefined;
   Product: { id: number; title: string } | undefined;
+  Lab05: { id: number; title: string } | undefined;
   Lab0421Result: { result: IRESULTEQUATION } | undefined;
   CourseDetail: {course:ICOURSE } | undefined;
   ProductDetail: {course:ICOURSE } | undefined;

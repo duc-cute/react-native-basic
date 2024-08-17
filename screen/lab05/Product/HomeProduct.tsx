@@ -46,7 +46,7 @@ const Product = () => {
   const navigation: NavigationProp<RootStackParamList> = useNavigation();
 
   const handlePress = (item: ICOURSE) => {
-    navigation.navigate("CourseDetail", {
+    navigation.navigate("ProductDetail", {
       course: item,
     });
   };
