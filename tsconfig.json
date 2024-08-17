@@ -5,5 +5,14 @@
   },
   "include": [
     "./src/**/*.ts"
-  ]
+  ],
+  "expo": {
+    "android": {
+      "enableHermes": true
+    },
+    "ios": {
+      "useHermes": true
+    }
+  }
 }
+

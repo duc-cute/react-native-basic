@@ -13,6 +13,8 @@ import { RootStackParamList } from "./types/route";
 import Lab042 from "./screen/lab04/lab042/Lab042";
 import Lab042_1_Result from "./screen/lab04/lab042/Lab0421Result";
 import Lab04 from "./screen/lab04/Lab04";
+import Course from "./screen/lab05/Course/HomeCourse";
+import CourseDetail from "./screen/lab05/Course/DetailCourse";
 
 export default function App() {
   const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -55,6 +57,26 @@ export default function App() {
           name="Lab0421Result"
           component={Lab042_1_Result}
           options={{ title: "Lab 0421 Result" }}
+        />
+          <Stack.Screen
+          name="Course"
+          component={Course}
+          options={{ title: "Course" }}
+        />
+           <Stack.Screen
+          name="CourseDetail"
+          component={CourseDetail}
+          options={{ title: "CourseDetail" }}
+        />
+            <Stack.Screen
+          name="Course"
+          component={Course}
+          options={{ title: "Product" }}
+        />
+           <Stack.Screen
+          name="CourseDetail"
+          component={CourseDetail}
+          options={{ title: "ProductDetail" }}
         />
       </Stack.Navigator>
     </NavigationContainer>
