@@ -4,25 +4,25 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 
 
-const Lab05 = () => {
+const Test2408 = () => {
   const navigation = useNavigation();
   return (
     <View>
-      <Text>Lab05</Text>
+      <Text>Test2408</Text>
 
       <View style={styles.group}>
       <TouchableOpacity
           style={styles.labButton}
-          onPress={() => navigation.navigate("Course")}
+          onPress={() => navigation.navigate("Student")}
         >
-          <Text style={styles.labText}>Đi tới Course</Text>
+          <Text style={styles.labText}>Đi tới Student</Text>
         </TouchableOpacity>
-        <TouchableOpacity
+        {/* <TouchableOpacity
           style={styles.labButton}
           onPress={() => navigation.navigate("Product")}
         >
           <Text style={styles.labText}>Đi tới Product</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
 
       </View>
     </View>
@@ -49,4 +49,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Lab05;
+export default Test2408;

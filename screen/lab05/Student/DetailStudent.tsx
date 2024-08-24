@@ -14,35 +14,25 @@ import {
   Pressable,
   ImageBackground,
   Image,
+  SafeAreaView,
 } from "react-native";
 import { RootStackParamList } from "../../../types/route";
 
-const CourseDetail = () => {
+const StudentDetail = () => {
   const navigation: NavigationProp<RootStackParamList> = useNavigation();
-  const route: RouteProp<RootStackParamList, "CourseDetail"> = useRoute();
+  const route: RouteProp<RootStackParamList, "DetailStudent"> = useRoute();
   console.log("route", route);
-  console.log("route.params.course.name", route?.params?.course.name);
-  
-
+  console.log("route.params.course.name", route?.params);
+  console.log("route.params.course.name", route?.params);
 
   return (
     <View style={styles.body}>
-      <Text style={styles.header}>Lab032</Text>
+      <Text style={styles.header}>Student Detail</Text>
 
       <View style={styles.body}>
-        {route.params?.course.image && (
-          <View style={styles.container}>
-            <Image
-              style={styles.image}
-              source={{uri:route?.params?.course.image}}
-            />
-              <View>
-                <Text style={styles.textItem}>Price Course: {route.params.course.price}VND</Text>
-                <Text style={styles.textItem}>Description Course: {route.params.course.desc}</Text>
-              </View> 
-          </View>
-        )}
-        {/* <Text style={styles.text}>{route?.params?.course.name}</Text> */}
+        <View>
+          <Text>{`${route?.params?.student?.msv}-${route?.params?.student?.name}`}</Text>
+        </View>
       </View>
     </View>
   );
@@ -50,9 +40,9 @@ const CourseDetail = () => {
 
 const styles = StyleSheet.create({
   container: {
-    display:"flex",
+    display: "flex",
     flexDirection: "row",
-    gap:20
+    gap: 20,
     // alignItems: 'center',
     // justifyContent: 'center',
   },
@@ -83,18 +73,17 @@ const styles = StyleSheet.create({
   },
 
   body: {
-    display:"flex",
-    paddingHorizontal:10,
-    flex:1,
-    height:100,
+    display: "flex",
+    paddingHorizontal: 10,
+    flex: 1,
+    height: 100,
     marginBottom: 20,
     gap: 50,
-    color:"#000",
-    backgroundColor:"#fff"
+    color: "#000",
+    backgroundColor: "#fff",
   },
-  textItem :{
-    display:"flex"
-
+  textItem: {
+    display: "flex",
   },
   // layout: {
   //   display: "flex",
@@ -103,4 +92,4 @@ const styles = StyleSheet.create({
   // },
 });
 
-export default CourseDetail;
+export default StudentDetail;

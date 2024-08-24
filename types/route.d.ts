@@ -8,11 +8,13 @@ export type RootStackParamList = {
   Lab042: { id: number; title: string } | undefined;
   Course: { id: number; title: string } | undefined;
   Product: { id: number; title: string } | undefined;
+  Student: { id: number; title: string } | undefined;
   Lab05: { id: number; title: string } | undefined;
+  Test2408: { id: number; title: string } | undefined;
   Lab0421Result: { result: IRESULTEQUATION } | undefined;
-  CourseDetail: {course:ICOURSE } | undefined;
-  ProductDetail: {course:ICOURSE } | undefined;
-  
+  CourseDetail: { course: ICOURSE } | undefined;
+  DetailStudent: { student: ISTUDENT } | undefined;
+  ProductDetail: { course: ICOURSE } | undefined;
 };
 
 export interface IRESULTEQUATION {
@@ -22,12 +24,20 @@ export interface IRESULTEQUATION {
 }
 
 export interface ICOURSE {
-  id:number,
+  id: number;
   name: string;
   price: number;
   desc: string;
-  image:string
+  image: string;
+}
 
+export interface ISTUDENT {
+  id: number;
+  msv: string;
+  name: string;
+  pointPhysics: number;
+  pointMath: number;
+  pointChemistry: number;
 }
 
 declare global {
@@ -35,5 +45,3 @@ declare global {
     interface RootParamList extends RootStackParamList {}
   }
 }
-
-

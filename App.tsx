@@ -13,8 +13,8 @@ import { RootStackParamList } from "./types/route";
 import Lab042 from "./screen/lab04/lab042/Lab042";
 import Lab042_1_Result from "./screen/lab04/lab042/Lab0421Result";
 import Lab04 from "./screen/lab04/Lab04";
-import Course from "./screen/lab05/Course/HomeCourse";
-import CourseDetail from "./screen/lab05/Course/DetailCourse";
+import Student from "./screen/lab05/Student/HomeStudent"
+import DetailStudent from "./screen/lab05/Student/DetailStudent";
 import Product from "./screen/lab05/Product/HomeProduct";
 import ProductDetail from "./screen/lab05/Product/DetailProduct";
 import Lab05 from "./screen/lab05";
@@ -62,14 +62,14 @@ export default function App() {
           options={{ title: "Lab 0421 Result" }}
         />
           <Stack.Screen
-          name="Course"
-          component={Course}
-          options={{ title: "Course" }}
+          name="Student"
+          component={Student}
+          options={{ title: "Student" }}
         />
            <Stack.Screen
-          name="CourseDetail"
-          component={CourseDetail}
-          options={{ title: "CourseDetail" }}
+          name="DetailStudent"
+          component={DetailStudent}
+          options={{ title: "DetailStudent" }}
         />
             <Stack.Screen
           name="Product"
